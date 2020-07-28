@@ -1,0 +1,22 @@
+.container {
+  background-color: indianred;
+  padding: 5px;
+  margin: 10px 20px;
+
+  > div {
+    min-height: 80px;
+    margin-bottom: 0px !important;
+
+    .item-fx {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.6);
+      padding-top: 10px !important;
+      padding-bottom: 12px !important;
+
+      &--name {
+        padding: 10px;
+      }
+    }
+  }
+
+}

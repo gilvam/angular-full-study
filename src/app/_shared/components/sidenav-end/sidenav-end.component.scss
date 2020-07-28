@@ -1,0 +1,10 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+
+:host::ng-deep { // component filho
+  > .ng-star-inserted:not(template) {
+    @include contentDefaultHeight(0);
+  }
+}
+
+

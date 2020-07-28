@@ -1,0 +1,46 @@
+<ui-paginate (changeScroll)="loadPagination()"
+             (changeSelectedList)="getSelects($event)"
+             [page]="page"
+             [menuActionCheck]="menuActionCheck"
+             [paginationDescription]="'transações'"
+             [emptyMsgTitle]="'Lista vazia'"
+             [emptyMsgDescription]="'Sem transações'"
+             typeList="default"
+>
+  <mat-selection-list>
+    <mat-list-option *ngFor="let transaction of transactions; let i = index;" [value]="transaction.id">
+
+      <ui-list fxLayout="row wrap" fxLayoutGap="10px grid">
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'nome'">
+          {{ transaction.name }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'descrição'">
+          {{ transaction.description }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'data'">
+          {{ transaction.date }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'telefone'">
+          {{ transaction.phone }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'ativo'">
+          {{ transaction.isAuthorized }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'categoria'">
+          {{ transaction.category }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'email'">
+          {{ transaction.email }}
+        </ui-list-cell>
+        <ui-list-cell [fxFlex]="25" [fxFlex.md]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'total'">
+          {{ transaction.amount | currency:'BRL':true:'1.2-2' }}
+        </ui-list-cell>
+      </ui-list>
+
+      <div class="mat-list-action">
+      </div>
+
+    </mat-list-option>
+  </mat-selection-list>
+
+</ui-paginate>

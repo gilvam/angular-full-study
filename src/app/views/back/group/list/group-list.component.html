@@ -1,0 +1,37 @@
+<ui-paginate (changeScroll)="loadPagination()"
+             (changeSelectedList)="getSelects($event)"
+             [page]="page"
+             [menuActionCheck]="menuActionCheck"
+             [paginationDescription]="'grupos'"
+             [emptyMsgTitle]="'Lista vazia'"
+             [emptyMsgDescription]="'Sem grupos'"
+             typeList="default"
+>
+  <mat-selection-list #matSelectionList>
+    <mat-list-option *ngFor="let group of groups; let i = index;" [value]="group.id">
+
+      <ui-list fxLayout="row wrap" fxLayoutGap="10px grid">
+        <ui-list-cell [fxFlex]="35" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'Nome'"> {{ group.name }} </ui-list-cell>
+        <ui-list-cell [fxFlex]="35" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'Desc'"> {{ group.description }} </ui-list-cell>
+        <ui-list-cell [fxFlex]="30" [fxFlex.sm]="50" [fxFlex.xs]="100" [title]="'Ativo'"> {{ group.active ? 'sim' : 'não' }} </ui-list-cell>
+      </ui-list>
+
+      <div class="mat-list-action">
+        <button mat-icon-button (click)="edit(i)">
+          <mat-icon matTooltip="Editar" [matTooltipPosition]="'above'">edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="config(i)">
+          <mat-icon matTooltip="Configurações" [matTooltipPosition]="'above'">settings</mat-icon>
+        </button>
+      </div>
+
+    </mat-list-option>
+  </mat-selection-list>
+
+</ui-paginate>
+
+<button mat-fab color="primary" (click)="create()">
+  <mat-icon>add</mat-icon>
+</button>
+
+

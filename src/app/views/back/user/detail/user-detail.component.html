@@ -1,0 +1,11 @@
+<div style="padding: 20px;">
+
+  id: {{ paramId }}
+
+  <pre style="font-size: 12px; line-height: 10px; color: darkred;">
+  	{{ user | json }}
+  </pre>
+
+  <button mat-raised-button color="primary" [routerLink]="['/back/users/'+paramId+'/more']">Mais informação -></button>
+</div>
+

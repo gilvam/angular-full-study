@@ -1,0 +1,19 @@
+<mat-form-field>
+
+  <mat-select [formControl]="formControlName.control" [placeholder]="placeholder" [multiple]="multiple">
+
+    <ui-search [formControl]="itemFilterCtrl"></ui-search>
+
+    <section class="check-all">
+      <mat-checkbox (change)="selectOrUnselectAll($event.checked)"></mat-checkbox>
+    </section>
+
+    <mat-option *ngFor="let item of filteredItems | async" [value]="setItem(item)">
+      {{ item[itemName] ? item[itemName] : item }}
+    </mat-option>
+  </mat-select>
+
+  <ng-content></ng-content> <!--  mat-hint-->
+
+  <mat-error>{{ formControlName?.control['coreError'] }}</mat-error>
+</mat-form-field>

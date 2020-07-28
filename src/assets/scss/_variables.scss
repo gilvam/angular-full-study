@@ -1,0 +1,116 @@
+// Brand colors
+$primary: #3460a7 !default;
+$secondary: #35B4B1 !default;
+
+// UI colors
+$disabled: #6c757d !default;
+
+// Fonts
+// Colors
+$font--reading: #222222 !default;
+$font--label: #888888 !default;
+
+// Families
+$font-family--body: 'Roboto', sans-serif;
+
+// Weights
+$font-weight--normal: 300;
+$font-weight--headings: 300;
+
+// Sizes
+$font-size--lead: 1rem;
+
+
+$border-radius: 100px; // TODO: Change
+
+// Specific hex for basic colors
+$green: #43ad53 !default;
+$yellow: #ece900 !default;
+$red: #ea4335 !default;
+$blue: #4e83bb !default;
+$white: #fff !default;
+$grey: #dee2e6 !default;
+$grey--lighter: #f9f9f9 !default;
+$grey--blueish: #64798f !default;
+$black: #000 !default;
+$black--lighter: #495057 !default;
+
+$core-primary: #004085;
+$core-primary: #4285f4;
+$core-primary-dark: darken($core-primary, 10%);
+$core-primary-dark-ultra: darken($core-primary, 35%);
+$core-primary-lighter: #b8daff;
+$core-primary-lighter-ultra: #cce5ff;
+
+$core-secondary: #383d41;
+$core-secondary: #a6c;
+$core-secondary-dark: darken($core-secondary, 10%);
+$core-secondary-dark-ultra: darken($core-secondary, 35%);
+$core-secondary-lighter: #d6d8db;
+$core-secondary-lighter-ultra: #e2e3e5;
+
+$core-success: #155724;
+$core-success: #00c851;
+$core-success-dark: darken($core-success, 10%);
+$core-success-dark-ultra: darken($core-success, 35%);
+$core-success-lighter: #c3e6cb;
+$core-success-lighter-ultra: #d4edda;
+
+$core-danger: #721c24;
+$core-danger: #ff3547;
+$core-danger-dark: darken($core-danger, 10%);
+$core-danger-dark-ultra: darken($core-danger, 30%);
+$core-danger-lighter: #f5c6cb;
+$core-danger-lighter-ultra: #f8d7da;
+
+$core-warning: #856404;
+$core-warning: #fb3;
+$core-warning-dark: darken($core-warning, 10%);
+$core-warning-dark-ultra: darken($core-warning, 35%);
+$core-warning-lighter: #ffeeba;
+$core-warning-lighter-ultra: #fff3cd;
+
+$core-info: #0c5460;
+$core-info: #33b5e5;
+$core-info-dark: darken($core-info, 10%);
+$core-info-dark-ultra: darken($core-info, 35%);
+$core-info-lighter: #bee5eb;
+$core-info-lighter-ultra: #d1ecf1;
+
+$core-light: #818182;
+$core-light: #e0e0e0;
+$core-light-dark: darken($core-light, 10%);
+$core-light-dark-ultra: darken($core-light, 35%);
+$core-light-lighter: #fdfdfe;
+$core-light-lighter-ultra: #fefefe;
+
+$core-dark: #1b1e21;
+$core-dark: #212121;
+$core-dark-dark: darken($core-dark, 10%);
+$core-dark-dark-ultra: darken($core-dark, 35%);
+$core-dark-lighter: #c6c8ca;
+$core-dark-lighter-ultra: #d6d8d9;
+
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded: true !default;
+$enable-shadows: true;
+$enable-transitions: true;
+$enable-hover-media-query: false;
+$enable-grid-classes: true;
+$enable-print-styles: true;
+
+
+// Backgrounds
+$bg-grey: #e1e1e1 !default;
+$bg-grey-darken: rgba(156, 167, 173, 0.15);
+
+// Backoffice-only
+$back-primary: #4fbca1 !default;
+
+
+$body-color: #576b71;
+$body-color-inverse: invert($body-color) !default;
+$link-color: #4fbca1;
+
+$mat-toolbar-height: 64px;
+$mat-toolbar-height-mobile: 56px;

@@ -1,0 +1,26 @@
+mat-card {
+  margin: 16px;
+
+  .status-error {
+
+    button {
+      margin: 3px;
+    }
+
+    &--100{
+      color: grey !important;
+    }
+    &--200{
+      color: forestgreen !important;
+    }
+    &--300{
+      color: steelblue !important;
+    }
+    &--400{
+      color: coral !important;
+    }
+    &--500{
+      color: darkred !important;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<!-- list matMenu action-->
+<button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="menuMoreOptions" (click)="cleanAction()">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<!-- list matMenu-->
+<mat-menu #menu="matMenu">
+  <!--  <ng-container ></ng-container>-->
+  <button mat-menu-item *ngFor="let item of menuMoreOptions" (click)="clickAction(item.subActions, item)">
+    <mat-icon>{{item?.icon}}</mat-icon>
+    <span>{{ item?.name }}</span>
+  </button>
+</mat-menu>

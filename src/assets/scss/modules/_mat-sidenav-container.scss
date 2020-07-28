@@ -1,0 +1,42 @@
+@import '../variables';
+
+$padding-container: 14px;
+
+// altura total dos elementos quando o menu é pequeno ou grande
+mat-sidenav-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #3460a7 !important;
+
+  // se logado
+  &.is-not-logged-in {
+    mat-sidenav { // esconde aside start e aside and
+      display: none;
+    }
+
+    > mat-sidenav-content {
+      > mat-toolbar { // esconde mat-toobar ( menu superior )
+        display: none;
+      }
+
+      > #router-outlet-container { /** component renderizado por rota */
+        height: 100vh;
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+  }
+
+  > mat-sidenav-content {
+    > #router-outlet-container { /** component renderizado por rota */
+      background-color: #fafafa !important;
+      //@include contentDefaultHeight((2 * $padding-container));
+      @include contentDefaultHeight(0);
+    }
+  }
+
+  > mat-sidenav {
+    border: none !important;
+  }
+}

@@ -1,0 +1,143 @@
+<div fxLayout="row wrap">
+  <mat-card [fxFlex]="100">
+    <mat-card-header>
+      <!--<div mat-card-avatar class="example-header-image"></div>-->
+      <mat-card-title>Formulário reativo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="20px grid">
+
+        <!--<mat-form-field [fxFlex]="25" [fxFlex.sm]="50" [fxFlex.xs]="100">-->
+        <!--  <input matInput type="text" placeholder="name" formControlName="name">-->
+        <!--  <mat-error>{{ formGroup.controls.name['coreError'] }}</mat-error>-->
+        <!--</mat-form-field>-->
+        <app-mat-form-field [fxFlex]="25" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Nome" formControlName="name">
+          <mat-hint align="end">{{formGroup.get('name').value.length}} / 13</mat-hint>
+        </app-mat-form-field>
+
+        <!--sem o uso do component e setando mat-error-->
+        <!--        <mat-form-field [fxFlex]="25" [fxFlex.sm]="50" [fxFlex.xs]="100">-->
+        <!--          <input matInput type="text" placeholder="Email" formControlName="email">-->
+        <!--          <mat-error>{{ formGroup.controls.email['coreError'] }}</mat-error>-->
+        <!--        </mat-form-field>-->
+        <app-mat-form-field [fxFlex]="25" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Email" formControlName="email">
+          <mat-hint>Validação específica REST</mat-hint>
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="25" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <mat-select placeholder="Sexo" formControlName="gender">
+            <mat-option [value]="true">Masculino</mat-option>
+            <mat-option [value]="false">Feminino</mat-option>
+          </mat-select>
+        </app-mat-form-field>
+
+        <ui-mat-select-multiple [fxFlex]="25" [fxFlex.sm]="50" [fxFlex.xs]="100"
+                                formControlName="profiles"
+                                [placeholder]="'Perfil'"
+                                [items]="profileItemList"
+                                [itemName]="'name'"
+                                [returnKey]="'id'"
+                                [multiple]="true"
+        >
+          <mat-hint>Validação específica</mat-hint>
+        </ui-mat-select-multiple>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input name="passwordOld" matInput formControlName="passwordOld" placeholder="Senha antiga"
+                 [type]="hidePassOld ? 'text' : 'password'">
+          <mat-icon matSuffix (click)="hidePassOld = !hidePassOld">
+            {{hidePassOld ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input name="password" matInput formControlName="password" placeholder="Nova senha"
+                 [type]="hidePassNew ? 'text' : 'password'">
+          <mat-icon matSuffix (click)="hidePassNew = !hidePassNew">
+            {{hidePassNew ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input name="passwordConfirm" matInput formControlName="passwordConfirm" placeholder="Confirmar nova senha"
+                 [type]="hidePassConf ? 'text' : 'password'">
+          <mat-icon matSuffix (click)="hidePassConf = !hidePassConf">
+            {{hidePassConf ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="100" [fxFlex.sm]="100" [fxFlex.xs]="100">
+          <textarea matInput placeholder="Descrição textarea" formControlName="description"></textarea>
+          <mat-hint align="end">{{formGroup.get('description').value.length}} / 250</mat-hint>
+        </app-mat-form-field>
+
+        <section [fxFlex]="33.3" [fxFlex.sm]="33.3" [fxFlex.xs]="100">
+          <label>Ativo:</label>
+          <mat-radio-group formControlName="isActivate">
+            <mat-radio-button [value]="true">Sim</mat-radio-button>
+            <mat-radio-button [value]="false">Não</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section [fxFlex]="33.3" [fxFlex.sm]="33.3" [fxFlex.xs]="100">
+          <label>Necessidades especiais:</label>
+          <mat-checkbox formControlName="hasSpecialNeeds">
+            {{ formGroup.get('hasSpecialNeeds').value ? 'sim' : 'não' }}
+          </mat-checkbox>
+        </section>
+
+        <section [fxFlex]="33.3" [fxFlex.sm]="33.3" [fxFlex.xs]="100">
+          <mat-slide-toggle class="example-margin" formControlName="isNotifications">
+            Notificações {{ formGroup.get('isNotifications').value ? 'Ativadas :)' : 'desativadas :(' }}
+          </mat-slide-toggle>
+        </section>
+
+        <br>
+        <br>
+        <p>
+          <a href="https://www.npmjs.com/package/ngx-mask" target="_blank" style="padding-right: 30px;">
+            NPM ngx-mask
+          </a>
+          <a href="https://jsdaddy.github.io/ngx-mask-page/main" target="_blank">
+            github.io ngx-mask
+          </a>
+        </p>
+        <br>
+        <br>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Telefone" formControlName="phone" mask="(000) 000-0000">
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Telefone com mask" formControlName="phone" mask="00 99000-0000">
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Placa" formControlName="plate" mask="SSS-0000">
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="33.3" [fxFlex.sm]="50" [fxFlex.xs]="100" (click)="pickerInit.open()">
+          <input matInput [matDatepicker]="pickerInit" placeholder="Data de nascimento" formControlName="dateX">
+          <mat-datepicker-toggle matSuffix [for]="pickerInit"></mat-datepicker-toggle>
+          <mat-datepicker #pickerInit></mat-datepicker>
+        </app-mat-form-field>
+
+      </form>
+
+      <ui-form-debug [form]="formGroup"></ui-form-debug>
+
+
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="save()" color="primary">
+        Salvar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

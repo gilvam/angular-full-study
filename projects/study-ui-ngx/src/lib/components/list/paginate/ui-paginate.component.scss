@@ -1,0 +1,268 @@
+@mixin borderBottom() {
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+@mixin borderTop() {
+  border-top: 1px solid rgba(0, 0, 0, .12);
+}
+
+.infinite-scroll-container {
+  height: 100%;
+
+  > div[infiniteScroll] {
+    overflow-y: auto;
+    position: relative;
+    height: 100%;
+    margin-bottom: -40px;
+
+    > ui-list {
+    }
+
+    mat-list {
+      padding-top: 0px;
+
+      &.mat-list {
+        &--header {
+          @include borderBottom();
+          margin: 0px !important;
+
+          > mat-list-item {
+            padding: 0px !important;
+
+            > .mat-list-item-content {
+              font-size: 12px;
+              color: rgba(0, 0, 0, .54);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+
+    .inner-content {
+      margin-bottom: 100px;
+
+      &.multiple-check { // mostrar ou esconder os checkbox
+        mat-selection-list {
+
+          > mat-list-option {
+            > div.mat-list-item-content {
+              > div.mat-list-item-ripple {
+                display: initial;
+                visibility: visible;
+              }
+
+              mat-pseudo-checkbox {
+                display: initial;
+                visibility: visible;
+              }
+
+              > div.mat-list-text {
+                > .mat-list-action {
+                  visibility: hidden;
+                  margin-left: -16px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      mat-selection-list {
+        padding: 0px;
+
+        > mat-list-option {
+          height: auto;
+          border-top: 1px rgba(0, 0, 0, .10) solid;
+
+          &:first-child {
+            border-top: none;
+          }
+
+          > .mat-list-item-content {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            @media (min-width: 1920px) and (max-width: 5000px) { // xl
+              //border-left: 3px red solid;
+            }
+            @media (min-width: 1280px) and (max-width: 1919px) { // lg
+              //border-left: 3px indianred solid;
+            }
+            @media (min-width: 960px) and (max-width: 1279px) { // md
+              //border-left: 3px palevioletred solid;
+              padding-top: 7px;
+              padding-bottom: 7px;
+            }
+            @media (min-width: 600px) and (max-width: 959px) { // sm
+              //border-left: 3px cadetblue solid;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            }
+            @media (min-width: 0px) and (max-width: 599px) { // xs
+              //border-left: 3px lightskyblue solid;
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
+
+            > div.mat-list-item-ripple {
+              display: none;
+              visibility: hidden;
+            }
+
+            mat-pseudo-checkbox {
+              display: none;
+              visibility: hidden;
+            }
+
+            > .mat-list-text {
+              //background-color: #aaa;
+              display: flex;
+              width: 100% !important;
+              flex-direction: initial !important;
+              padding: 0px;
+
+              > .mat-list-item {
+                //background-color: #35B4B1;
+                width: 100%;
+                padding-right: 10px;
+                height: auto;
+                align-items: center;
+              }
+
+              > .mat-list-action {
+                //background-color: blanchedalmond;
+                display: flex;
+                align-items: center;
+
+                > button {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .list-end {
+      &--loading {
+        margin-top: -100px;
+      }
+
+      &--load-more {
+        text-align: center;
+        margin-top: -80px;
+      }
+    }
+  }
+
+  > div.paginate-info {
+    background-color: whitesmoke;
+    display: block;
+    font-size: 10px;
+    width: auto;
+    padding: 15px 90px 14px 14px;
+    text-align: right;
+    z-index: 1;
+    position: relative;
+
+    > strong {
+    }
+  }
+
+  > div.paginate-empty {
+    height: 100vh;
+  }
+
+  &--table {
+
+  }
+
+  &--default {
+
+  }
+
+  &--card {
+    background-color: rgba(156, 167, 173, 0.3);
+
+    .inner-content {
+      &.multiple-check { // mostrar checkbox no CARD
+        mat-card {
+          mat-card-header {
+            .mat-card-header-text {
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+
+    .inner-content {
+      mat-selection-list {
+        > mat-list-option {
+          height: auto;
+          border-top: none !important;
+        }
+      }
+    }
+
+    mat-selection-list[fxlayout] {
+      //background-color: rebeccapurple !important;
+      margin: inherit !important;
+      padding: 10px 10px !important;
+
+      > mat-list-option {
+        //background-color: #4e83bb;
+        padding: 0px !important;
+
+        > .mat-list-item-content {
+          //background-color: #04b5b2;
+          padding: 12px !important;
+
+          > .mat-list-item-ripple {
+            z-index: 1;
+            padding: 0px;
+            margin: 12px;
+            border-radius: 5px;
+          }
+
+          mat-pseudo-checkbox {
+            //background-color: indianred;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 1;
+            padding: 2px;
+            margin: 10px;
+          }
+
+          > .mat-list-text {
+            //background-color: skyblue !important;
+
+            mat-card {
+              //background-color: mediumvioletred !important;
+              width: 100%;
+              padding: 16px;
+
+              > mat-card-content {
+                margin-right: 24px;
+                margin-bottom: 0px !important;
+
+                &:after {
+                  content: "";
+                  position: absolute;
+                  display: block;
+                  background: linear-gradient(to right, transparent, white);
+                  width: 100%;
+                  height: 17px;
+                  bottom: 52px;
+                  left: 0px;
+                  right: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

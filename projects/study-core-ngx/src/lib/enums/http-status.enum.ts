@@ -1,0 +1,66 @@
+export const enum HttpStatusEnum {
+  CONTINUE = 100,             // continue
+  SWITCHING_PROTOCOLS = 101,  // protocolos de switching
+  PROCESSING = 102,           // em processamento
+
+  OK = 200,                             // sucesso
+  CREATED = 201,                        // criado
+  ACCEPTED = 202,                       // aceito
+  NON_AUTHORITATIVE_INFORMATION = 203,  // informações não autoritativas
+  NO_CONTENT = 204,         // sem conteúdo
+  RESET_CONTENT = 205,      // redefinir o conteúdo
+  PARTIAL_CONTENT = 206,    // conteúdo parcial
+  MULTI_STATUS = 207,       // status multiplo
+  ALREADY_REPORTED = 208,   // já relatado
+  IM_USED = 226,            // estou acostumado
+  MULTIPLE_CHOICES = 300,   // escolhas múltiplas
+  MOVED_PERMANENTLY = 301,  // movido permanentemente
+  FOUND = 302,              // encontrado
+  SEE_OTHER = 303,          // veja outro
+  NOT_MODIFIED = 304,       // não modificado
+  USE_PROXY = 305,          // usar proxy
+  SWITCH_PROXY = 306,       // alternar proxy
+  TEMPORARY_REDIRECT = 307, // redirecionamento temporário
+  PERMANENT_REDIRECT = 308, // redirecionamento permanente
+
+  BAD_REQUEST = 400,                      // pedido ruim
+  UNAUTHORIZED = 401,                     // não autorizado
+  PAYMENT_REQUIRED = 402,                 // pagamento requerido
+  FORBIDDEN = 403,                        // proibido
+  NOT_FOUND = 404,                        // não encontrado
+  METHOD_NOT_ALLOWED = 405,               // método não permitido
+  NOT_ACCEPTABLE = 406,                   // não aceitável
+  PROXY_AUTHENTICATION_REQUIRED = 407,    // autenticação de proxy necessária
+  REQUEST_TIMEOUT = 408,                  // tempo limite de solicitação
+  CONFLICT = 409,                         // conflito
+  GONE = 410,                             // se foi
+  LENGTH_REQUIRED = 411,                  // comprimento necessário
+  PRECONDITION_FAILED = 412,              // condição prévia falhou
+  PAYLOAD_TOO_LARGE = 413,                // carga útil muito grande
+  URI_TOO_LONG = 414,                     // uri por muito tempo
+  UNSUPPORTED_MEDIA_TYPE = 415,           // tipo de mídia não suportado
+  RANGE_NOT_SATISFIABLE = 416,            // intervalo não satisfatório
+  EXPECTATION_FAILED = 417,               // expectativa falhou
+  I_AM_A_TEAPOT = 418,                    // eu sou um bule de chá
+  MISDIRECTED_REQUEST = 421,              // pedido mal direcionado
+  UNPROCESSABLE_ENTITY = 422,             // entidade não processável
+  LOCKED = 423,                           // bloqueado
+  FAILED_DEPENDENCY = 424,                // falha de dependência
+  UPGRADE_REQUIRED = 426,                 // atualização necessária
+  PRECONDITION_REQUIRED = 428,            // condição prévia necessária
+  TOO_MANY_REQUESTS = 429,                // muitos pedidos
+  REQUEST_HEADER_FIELDS_TOO_LARGE = 431,  // pedido de campos de cabeçalho muito grande
+  UNAVAILABLE_FOR_LEGAL_REASONS = 451,    // indisponível por motivos legais
+
+  INTERNAL_SERVER_ERROR = 500,            // erro do servidor interno
+  NOT_IMPLEMENTED = 501,                  // não implementado
+  BAD_GATEWAY = 502,                      // gateway ruim
+  SERVICE_UNAVAILABLE = 503,              // serviço indisponível
+  GATEWAY_TIMEOUT = 504,                  // tempo limite do gateway
+  HTTP_VERSION_NOT_SUPPORTED = 505,       // versão http não suportada
+  VARIANT_ALSO_NEGOTIATES = 506,          // variante também negocia
+  INSUFFICIENT_STORAGE = 507,             // armazenamento insuficiente
+  LOOP_DETECTED = 508,                    // loop detectado
+  NOT_EXTENDED = 510,                     // não estendido
+  NETWORK_AUTHENTICATION_REQUIRED = 511,  // autenticação de rede necessária
+}

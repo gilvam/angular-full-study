@@ -1,0 +1,52 @@
+<form class="default-sidenav-start" [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="grid">
+    <mat-card
+        [fxFlex]="100"
+        class="pd-bottom-0"
+        >
+        <mat-card-content>
+            <ui-mat-select-multiple [fxFlex]="100"
+                formControlName="states"
+                [placeholder]="'Filtrar código'"
+                [items]="statesItemList"
+                [itemName]="'name'"
+                [returnKey]="'id'"
+                [multiple]="false"
+            ></ui-mat-select-multiple>
+
+            <ui-mat-select-multiple [fxFlex]="100"
+                    formControlName="covenants"
+                    [placeholder]="'tipos de con'"
+                    [items]="covenantsItemList"
+                    [itemName]="'name'"
+                    [returnKey]="'id'"
+                    [multiple]="false"
+            ></ui-mat-select-multiple>
+        </mat-card-content>
+    </mat-card>
+    <mat-card
+        [fxFlex]="100"
+        *ngIf="formGroup.get('covenants').value === 1">
+        <mat-card-content>
+            <app-mat-form-field [fxFlex]="100">
+                <input matInput placeholder="Placa" formControlName="field1">
+            </app-mat-form-field>
+
+            <app-mat-form-field [fxFlex]="100">
+                <input matInput placeholder="Renavam" formControlName="field2">
+            </app-mat-form-field>
+
+            <div mat-dialog-actions align="center">
+                <button mat-button class="btn-dialog-find" color="primary" (click)="find()">Ver débitos</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>
+
+<mat-nav-list>
+  <mat-card-content>
+    <a mat-list-item [routerLink]="['/']" routerLinkActive="mat-active">
+      <mat-icon mat-list-icon>keyboard_arrow_left</mat-icon>
+      <span matLine>voltar</span>
+    </a>
+  </mat-card-content>
+</mat-nav-list>

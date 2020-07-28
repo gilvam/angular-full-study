@@ -1,0 +1,10 @@
+
+<h3>virtual scroll</h3>
+
+<ul>
+  <cdk-virtual-scroll-viewport #cdkVSV  style="height: 400px" [itemSize]="50" (scrolledIndexChange)="handlerCdk(cdkVSV)">
+    <ng-container *cdkVirtualFor="let transaction of transactions; let i = index;">
+      <li> <small>{{ i }} - </small> <small>placa:</small> {{transaction.placa}} </li>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+</ul>

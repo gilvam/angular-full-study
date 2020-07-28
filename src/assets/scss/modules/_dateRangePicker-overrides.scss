@@ -1,0 +1,52 @@
+@import '../mixins';
+
+.md-drppicker.double {
+    min-width: 550px;
+}
+
+@include MQ-max(860px){
+    .md-drppicker.double {
+        min-width: 0;
+    }
+}
+body{
+    .md-drppicker{
+        font-size: 13px;
+        .btn{
+            box-shadow: none !important;
+            &.btn-default{
+                margin-right: 5px !important;
+            }
+
+        }
+        th{
+            font-weight: 400;
+            &.month{
+                color:rgba(0,0,0,.87);
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            &.next,
+            &.prev{
+                &.available{
+
+                    opacity: .5;
+                }
+            }
+        }
+        .calendar {
+            td, th{
+                height: 2.5em;
+                &.active{
+                    opacity:1;
+                }
+                &.start-date.end-date{
+                    border-radius:50%;
+                }
+                span{
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}

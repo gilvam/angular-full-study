@@ -1,0 +1,144 @@
+div.cdk-overlay-container {
+  div.cdk-overlay-backdrop {
+    &.backdrop-lg-top{
+      background-color: blue;
+    }
+  }
+
+  div.cdk-global-overlay-wrapper {
+    div.cdk-overlay-pane {
+      &.dialog-panel-all {
+        min-width: 100%;
+        padding: 8px 8px 0px 8px;
+      }
+      &.dialog-panel-lg {
+        min-width: 90vw;
+      }
+
+      &.dialog-panel-sm {
+        width: 700px;
+        min-width: auto;
+      }
+
+      &.dialog-panel-xs {
+        width: 500px;
+        min-width: auto;
+      }
+
+      div.cdk-visually-hidden {
+      }
+
+      mat-dialog-container.mat-dialog-container {
+        .ng-star-inserted { // app filter
+          h1.mat-dialog-title {
+          }
+
+          div.mat-dialog-content {
+            form.ng-pristine {
+              app-mat-form-field.search-first {
+                mat-form-field.mat-form-field {
+                  div.mat-form-field-wrapper {
+                    div.mat-form-field-flex {
+                      div.mat-form-field-infix {
+                        input.mat-input-element {
+                        }
+
+                        span.mat-form-field-label-wrapper {
+                          label.mat-form-field-label {
+                          }
+                        }
+                      }
+                    }
+
+                    div.mat-form-field-underline {
+                      span.mat-form-field-ripple {
+                      }
+                    }
+
+                    div.mat-form-field-subscript-wrapper {
+                      div.mat-form-field-hint-wrapper {
+                        div.mat-form-field-hint-spacer {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              app-mat-form-field {
+                mat-form-field.mat-form-field {
+                  div.mat-form-field-wrapper {
+                    div.mat-form-field-flex {
+                      div.mat-form-field-infix {
+                        input.mat-input-element {
+                        }
+
+                        span.mat-form-field-label-wrapper {
+                          label.mat-form-field-label {
+                          }
+                        }
+                      }
+                    }
+
+                    div.mat-form-field-underline {
+                      span.mat-form-field-ripple {
+                      }
+                    }
+
+                    div.mat-form-field-subscript-wrapper {
+                      div.mat-form-field-hint-wrapper {
+                        div.mat-form-field-hint-spacer {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          div.mat-dialog-actions {
+            //padding-top: 20px !important;
+
+            button.btn-dialog-cancel {
+              color: #999999 !important;
+
+              span.mat-button-wrapper {
+              }
+
+              div.mat-button-ripple {
+              }
+
+              div.mat-button-focus-overlay {
+              }
+            }
+
+            button.btn-dialog-reset {
+              //color: #999999 !important;
+
+              span.mat-button-wrapper {
+              }
+
+              div.mat-button-ripple {
+              }
+
+              div.mat-button-focus-overlay {
+              }
+            }
+
+            button.btn-dialog-find {
+              span.mat-button-wrapper {
+              }
+
+              div.mat-button-ripple {
+              }
+
+              div.mat-button-focus-overlay {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

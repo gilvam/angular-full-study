@@ -1,0 +1,81 @@
+<!--<div fxLayout="row" fxLayoutAlign="space-around center" coreAutoHeight>-->
+<div fxLayout="row" fxLayoutAlign="space-around center">
+
+  <mat-card style="max-width: 500px;">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>dialog verification</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <mat-list>
+        <mat-list-item>
+          <button mat-raised-button (click)="dialogVerificationNoNames()"> botões padrões</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="dialogVerificationSimple()"> Simple</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="dialogVerificationSimpleDialogBtnString()"> new DialogBtn string </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="dialogVerificationSimpleDialogBtnAllParams()"> new DialogBtn all params </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="success" (click)="dialogVerificationSuccess()"> success </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="danger" (click)="dialogVerificationDanger()"> danger </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="warning" (click)="dialogVerificationWarning()"> warning </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="info" (click)="dialogVerificationInfo()"> info </button>
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card style="max-width: 500px;">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>snack bar</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <mat-list>
+        <mat-list-item>
+          <button mat-raised-button (click)="snackBarVerification()"> default </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="snackBarVerificationAction()"> default action </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="success" (click)="snackBarVerificationSuccess()"> success </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="danger" (click)="snackBarVerificationDanger()"> danger </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="warning" (click)="snackBarVerificationWarning()"> warning </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button color="info" (click)="snackBarVerificationInfo()"> info </button>
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+
+<!--<mat-grid-list cols="4" rowHeight="100px">-->
+  <!--<mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'lightblue'"> One </mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'lightgreen'"> Two </mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightpink'"> Three </mat-grid-tile>-->
+  <!--<mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'#DDBDF1'"> Four </mat-grid-tile>-->
+<!--</mat-grid-list>-->
+

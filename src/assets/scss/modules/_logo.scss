@@ -1,0 +1,10 @@
+.logo {
+
+  &--logo-toolbar {
+    width: 100px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

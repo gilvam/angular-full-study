@@ -1,0 +1,10 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+
+:host::ng-deep { // component filho
+  > .ng-star-inserted:last-child { // pega o component criado, caso não tenha pega a tag template.ng-star-inserted
+    @include contentDefaultHeight($mat-toolbar-height);
+  }
+}
+
+

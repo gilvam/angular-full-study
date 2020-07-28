@@ -1,0 +1,63 @@
+#app-login {
+  height: 100%;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(to right, #04b5b2, #0060aa);
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  mat-card {
+    width: 300px;
+    //margin: 10% auto;
+    padding: 50px;
+
+    mat-card-header {
+      padding: 0px 0px 40px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 200px;
+        margin-right: 30px;
+      }
+
+      mat-card-title {
+      }
+    }
+
+    mat-card-content {
+      margin-bottom: 0px;
+
+      form {
+        mat-form-field {
+          input {
+
+          }
+
+          mat-error {
+
+          }
+        }
+      }
+    }
+
+    mat-card-actions {
+      margin: 0px;
+
+      button {
+        width: 100%;
+        padding: 6px;
+
+        mat-icon {
+
+        }
+      }
+    }
+  }
+}

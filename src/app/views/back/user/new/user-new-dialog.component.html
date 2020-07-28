@@ -1,0 +1,44 @@
+<!--title-->
+<h1 mat-dialog-title>
+  <!--<mat-icon *ngIf="data?.colorType">{{ this.iconName }}</mat-icon>-->
+  Novo usuário
+</h1>
+
+<!--content-->
+<div mat-dialog-content>
+
+  <form [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="20px grid">
+
+    <app-mat-form-field [fxFlex]="100" [fxFlex.sm]="100" [fxFlex.xs]="100">
+      <input matInput type="text" placeholder="Nome" formControlName="name">
+    </app-mat-form-field>
+
+    <app-mat-form-field [fxFlex]="100" [fxFlex.sm]="100" [fxFlex.xs]="100">
+      <input matInput type="text" placeholder="Email" formControlName="email">
+    </app-mat-form-field>
+
+    <app-mat-form-field [fxFlex]="33.33" [fxFlex.sm]="100" [fxFlex.xs]="100">
+      <input matInput type="text" placeholder="Telefone" formControlName="mobile" [mask]="'00 99000 0000'">
+    </app-mat-form-field>
+
+    <app-mat-form-field [fxFlex]="33.33" [fxFlex.sm]="50" [fxFlex.xs]="100">
+      <input name="password" matInput formControlName="password" placeholder="Senha" [type]="hidePassNew ? 'text' : 'password'">
+      <mat-icon matSuffix (click)="hidePassNew = !hidePassNew">{{hidePassNew ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </app-mat-form-field>
+
+    <app-mat-form-field [fxFlex]="33.33" [fxFlex.sm]="50" [fxFlex.xs]="100">
+      <input name="passwordConfirm" matInput formControlName="passwordConfirm" placeholder="Confirmar senha" [type]="hidePassConf ? 'text' : 'password'">
+      <mat-icon matSuffix (click)="hidePassConf = !hidePassConf">{{hidePassConf ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </app-mat-form-field>
+
+  </form>
+
+  <ui-form-debug [form]="formGroup"></ui-form-debug>
+</div>
+
+<!--action-->
+<div mat-dialog-actions align="end">
+  <button mat-button class="btn-dialog-cancel" (click)="cancel()" tabindex="-1"> cancelar </button>
+  <button mat-button class="btn-dialog-action" color="primary" (click)="save()" tabindex="-1"> salvar </button>
+</div>
+

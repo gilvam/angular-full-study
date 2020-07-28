@@ -1,0 +1,47 @@
+<ui-paginate (changeScroll)="loadPagination()"
+             (changeSelectedList)="getSelects($event)"
+             [page]="page"
+             [menuActionCheck]="menuActionCheck"
+             [paginationDescription]="'usuários'"
+             [emptyMsgTitle]="'Lista vazia'"
+             [emptyMsgDescription]="'Salve um usuário e ele(a) aparecerá aqui.'"
+             typeList="table"
+>
+  <mat-selection-list #matSelectionList>
+    <mat-list-option *ngFor="let user of users; let i = index;" [value]="user.id">
+
+      <ui-list fxLayout="row wrap" fxLayoutGap="10px grid">
+        <ui-list-cell [fxFlex]="35" [fxFlex.xs]="100" [title]="'Nome'"> {{ user.name }} </ui-list-cell>
+        <ui-list-cell [fxFlex]="35" [fxFlex.xs]="100" [title]="'Email'"> {{ user.email }} </ui-list-cell>
+        <ui-list-cell [fxFlex]="30" [fxFlex.xs]="100" [title]="'Mobile'"> {{ user.mobile }} </ui-list-cell>
+      </ui-list>
+
+      <div class="mat-list-action">
+        <button mat-icon-button (click)="edit(i)">
+          <mat-icon matTooltip="Editar" [matTooltipPosition]="'above'">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/back/users', user.id]">
+            <mat-icon>public</mat-icon>
+            <span>Detalhes</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="delete(i)">
+            <mat-icon>delete</mat-icon>
+            <span>Excluir</span>
+          </button>
+        </mat-menu>
+      </div>
+
+    </mat-list-option>
+  </mat-selection-list>
+</ui-paginate>
+
+<button mat-fab color="primary" (click)="create()">
+  <mat-icon>add</mat-icon>
+</button>

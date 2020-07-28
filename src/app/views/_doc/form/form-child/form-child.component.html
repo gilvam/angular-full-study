@@ -1,0 +1,54 @@
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Formulário reativo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <form [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="20px grid">
+
+        <app-mat-form-field [fxFlex]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Email" formControlName="email">
+        </app-mat-form-field>
+
+        <app-mat-form-field [fxFlex]="50" [fxFlex.xs]="100">
+          <input matInput type="text" placeholder="Nome" formControlName="name">
+        </app-mat-form-field>
+
+        <ng-container formGroupName="address">
+          <app-mat-form-field [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="50" [fxFlex.lg]="25" [fxFlex.xl]="25">
+            <input matInput type="text" placeholder="Rua" formControlName="streetName">
+          </app-mat-form-field>
+          <app-mat-form-field [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="50" [fxFlex.lg]="25" [fxFlex.xl]="25">
+            <input matInput type="text" placeholder="CEP" formControlName="zipCode" mask="00000-000">
+          </app-mat-form-field>
+          <ui-mat-select-multiple [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="50" [fxFlex.lg]="25" [fxFlex.xl]="25"
+                                  formControlName="states"
+                                  [items]="stateList"
+                                  [placeholder]="'Estados visitados'"
+                                  [itemName]="'name'"
+                                  [returnKey]="'id'"
+                                  [multiple]="true"
+          ></ui-mat-select-multiple>
+          <ui-mat-select-multiple [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="50" [fxFlex.lg]="25" [fxFlex.xl]="25"
+                                  formControlName="actions"
+                                  [items]="actionsList"
+                                  [placeholder]="'Ações permitidas'"
+                                  [multiple]="true"
+          ></ui-mat-select-multiple>
+        </ng-container>
+
+      </form>
+
+      <ui-form-debug [form]="formGroup"></ui-form-debug>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="save()" color="primary">
+        Salvar
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

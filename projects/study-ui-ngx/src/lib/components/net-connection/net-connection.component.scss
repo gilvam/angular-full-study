@@ -1,0 +1,14 @@
+$yellow: yellow;
+$orange: orange;
+
+button {
+  color: $yellow;
+  animation: changeColor 10s infinite;
+
+  @-webkit-keyframes changeColor {
+    0%   { color: $yellow; }
+    50% { color: $orange; }
+    60% { color: $orange; }
+    100% { color: $yellow; }
+  }
+}

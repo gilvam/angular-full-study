@@ -1,0 +1,16 @@
+mat-form-field {
+  width: 100%;
+}
+
+.check-all {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+
+  > mat-checkbox {
+
+    > label {
+      padding: 13px;
+    }
+  }
+}

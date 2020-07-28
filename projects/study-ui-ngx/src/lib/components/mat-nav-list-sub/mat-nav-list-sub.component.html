@@ -1,0 +1,22 @@
+<ng-container *ngFor="let item of menu; let i = index">
+
+  <div class="submenu" (mouseenter)="onMouseEnter(item)" (mouseleave)="onMouseLeave(item)" corePositionSubmenu>
+
+    <a class="submenu--mat-list-item" mat-list-item (click)="opened(item)">
+      <mat-icon mat-list-icon> {{ item.icon }} </mat-icon>
+      <span matLine> {{ item.name }} </span>
+      <mat-icon>{{ item.isOpened ? 'expand_more' : 'chevron_right'}}</mat-icon>
+    </a>
+
+    <div class="submenu--mat-list-sub" *ngIf="item.isOpened">
+      <mat-nav-list *ngFor="let submenu of item.links">
+        <a mat-list-item [routerLink]="submenu.link" (click)="clickSubMenu(item)">
+          <mat-icon mat-list-icon *ngIf="submenu.icon"> {{ submenu.icon }} </mat-icon>
+          <span matLine> {{ submenu.name }} </span>
+        </a>
+      </mat-nav-list>
+    </div>
+
+  </div>
+
+</ng-container>

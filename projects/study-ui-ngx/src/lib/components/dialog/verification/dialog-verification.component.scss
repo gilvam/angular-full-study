@@ -1,0 +1,54 @@
+$font-default-size: 50px;
+
+h1.mat-dialog-title {
+  display: flex;
+  line-height: $font-default-size;
+  font-size: 22px;
+
+  &.success,
+  &.danger,
+  &.warning,
+  &.info {
+    mat-icon {
+      height: auto;
+      width: auto;
+      margin-right: 15px;
+      font-size: $font-default-size;
+    }
+  }
+
+  &.success {
+    color: #00c851;
+  }
+
+  &.danger {
+    color: #ff3547;
+  }
+
+  &.warning {
+    color: #fb3;
+  }
+
+  &.info {
+    color: #33b5e5;
+  }
+}
+
+div.mat-dialog-content {
+  color: #495057;
+}
+
+div.mat-dialog-actions {
+  &.success > .btn-dialog-action {
+    color: #00c851;
+  }
+  &.danger > .btn-dialog-action {
+    color: #ff3547;
+  }
+  &.warning > .btn-dialog-action {
+    color: #fb3;
+  }
+  &.info > .btn-dialog-action {
+    color: #33b5e5;
+  }
+}

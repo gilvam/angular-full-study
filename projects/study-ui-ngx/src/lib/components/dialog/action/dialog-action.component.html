@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+
+    <button fxShow fxHide.gt-sm="true" mat-icon-button [mat-dialog-close]="null">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <span class="fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="spacer"></span>
+
+    <button fxHide fxShow.gt-sm="true"  class="dialog-close" mat-button [mat-dialog-close]="null">
+      cancelar
+    </button>
+
+    <button mat-button [mat-dialog-close]="item" [color]="item?.color" *ngFor="let item of subActions">
+      <mat-icon *ngIf="item?.icon">{{ item?.icon }}</mat-icon>
+      {{ item?.name }}
+    </button>
+
+    <section>
+      <mat-checkbox #matCheckbox (change)="clickCheck(matCheckbox)"></mat-checkbox>
+    </section>
+
+  </mat-toolbar-row>
+</mat-toolbar>

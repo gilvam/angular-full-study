@@ -1,0 +1,28 @@
+<!--title-->
+<h1 mat-dialog-title> Usuários </h1>
+
+<!--content-->
+<div mat-dialog-content>
+
+  <form [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="20px grid" id="formSearch">
+    <app-mat-form-field [fxFlex]="100" [fxFlex.md]="100" [fxFlex.sm]="100" [fxFlex.xs]="100" class="search-first">
+      <input matInput type="text" placeholder="Nome" formControlName="name">
+    </app-mat-form-field>
+
+    <app-mat-form-field [fxFlex]="50" [fxFlex.md]="50" [fxFlex.sm]="50" [fxFlex.xs]="100">
+      <input matInput type="text" placeholder="Email" formControlName="email">
+    </app-mat-form-field>
+
+    <app-mat-form-field [fxFlex]="50" [fxFlex.md]="50" [fxFlex.sm]="50" [fxFlex.xs]="100">
+      <input matInput type="number" placeholder="Telefone" formControlName="mobile">
+    </app-mat-form-field>
+  </form>
+
+</div>
+
+<!--actions-->
+<div mat-dialog-actions align="end">
+  <button mat-button class="btn-dialog-cancel" (click)="cancel()" tabindex="-1"> CANCELAR </button>
+  <button mat-button class="btn-dialog-reset" (click)="formGroup.reset()"> LIMPAR </button>
+  <button mat-button class="btn-dialog-find" color="primary" (click)="find()" form="formSearch"> BUSCAR </button>
+</div>

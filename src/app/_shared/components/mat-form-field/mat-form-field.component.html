@@ -1,0 +1,5 @@
+<mat-form-field>
+  <mat-label>{{ control?.placeholder }}</mat-label>
+  <ng-content></ng-content>
+  <mat-error>{{ formControlName?.control['coreError'] }}</mat-error>
+</mat-form-field>

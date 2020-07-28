@@ -1,0 +1,14 @@
+:host::ng-deep { // component filho
+  > .mat-toolbar {
+    background-color: #44779d;
+
+    > .ng-star-inserted:last-child { // pega o component criado, caso não tenha pega a tag template.ng-star-inserted
+      width: 100%;
+      display: contents;
+    }
+
+    button {
+      text-transform: uppercase;
+    }
+  }
+}

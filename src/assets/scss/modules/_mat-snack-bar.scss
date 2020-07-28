@@ -1,0 +1,32 @@
+@import '../variables';
+
+snack-bar-container {
+
+  &.mat-snackbar-success,
+  &.mat-snackbar-danger,
+  &.mat-snackbar-warning,
+  &.mat-snackbar-info {
+    > simple-snack-bar {
+      > .mat-simple-snackbar-action {
+        color: black;
+      }
+    }
+  }
+
+  &.mat-snackbar-success {
+    background-color: $core-success-dark;
+  }
+
+  &.mat-snackbar-danger {
+    background-color: $core-danger-dark-ultra;
+  }
+
+  &.mat-snackbar-warning {
+    background-color: $core-warning-dark;
+  }
+
+  &.mat-snackbar-info {
+    background-color: $core-info-dark;
+  }
+
+}

@@ -1,0 +1,38 @@
+mat-horizontal-stepper {
+  &.stepper {
+    > .mat-horizontal-stepper-header-container {
+      position: sticky;
+      background: #fafafa;
+      z-index: 2;
+      top: 0px;
+      //margin: -14px;
+    }
+
+    > .mat-horizontal-content-container {
+      //padding: 0 !important;
+
+      > .mat-horizontal-stepper-content {
+        //padding: 0 25px;
+      }
+    }
+
+    &__step {
+      // border: 1px solid darkcyan;
+      // margin-top: 20px;
+      // margin-bottom: 45px;
+    }
+
+    &__toolbar {
+      place-content: stretch space-between;
+      position: fixed;
+      bottom: 0;
+      border: 1px dashed red;
+      width: calc(100% - 295px) !important;
+      transition: width .1s ease;
+
+      &__no-sidebar {
+        width: calc(100% - 55px) !important;
+      }
+    }
+  }
+}

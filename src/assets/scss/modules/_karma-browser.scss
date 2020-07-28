@@ -1,0 +1,10 @@
+.jasmine_html-reporter {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.jasmine_html-reporter ~ div:not(.cdk-live-announcer-element) {
+  position: relative;
+  padding: 12px;
+  border: 24px solid #c6c6c6;
+}

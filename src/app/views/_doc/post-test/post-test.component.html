@@ -1,0 +1,118 @@
+<!--<mat-card>-->
+
+<!--  <mat-card-header> https://jsonplaceholder.typicode.com </mat-card-header>-->
+
+<!--  <mat-card-content>-->
+<!--    <form [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="20px grid" class="form-auto">-->
+<!--      <app-mat-form-field fxFlex>-->
+<!--        <input matInput type="text" placeholder="post id" formControlName="postId">-->
+<!--      </app-mat-form-field>-->
+<!--      <div [fxFlex]="'none'">-->
+<!--        <button mat-raised-button (click)="getAllByUserId()" style="margin-top: 11px; margin-right: 2px;">get by user-->
+<!--          id-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </form>-->
+
+<!--    <form [formGroup]="formGroup" fxLayout="row wrap" fxLayoutGap="20px grid" class="form-auto">-->
+<!--      <app-mat-form-field fxFlex>-->
+<!--        <input matInput type="text" placeholder="user id" formControlName="userId">-->
+<!--      </app-mat-form-field>-->
+<!--      <div [fxFlex]="'none'">-->
+<!--        <button mat-raised-button (click)="getByPostId()" style="margin-top: 11px; margin-right: 2px;">get by post id-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </form>-->
+
+<!--    <h5>Response:</h5>-->
+<!--    <pre style="font-size: 10px; line-height: 10px; overflow: auto; height: 70px;-->
+<!--                background-color: #8b00000a;  color: darkred;">-->
+<!--	    {{ response | json }}-->
+<!--    </pre>-->
+
+<!--  </mat-card-content>-->
+
+<!--  <mat-card-actions align="end">-->
+<!--    <button mat-button (click)="getAll()" color="primary">GET ALL</button>-->
+<!--  </mat-card-actions>-->
+<!--</mat-card>-->
+
+
+<mat-card>
+  <mat-card-content fxLayout="row wrap" fxLayoutGap="20px grid" class="form-auto">
+    <div class="status-error status-error--100" [fxFlex]="'auto'">
+      <button mat-stroked-button (click)="go(100)" [matTooltip]="'continue'"> 100</button>
+      <button mat-stroked-button (click)="go(101)" [matTooltip]="'protocolos de switching'"> 101</button>
+      <button mat-stroked-button (click)="go(102)" [matTooltip]="'em processamento'"> 102</button>
+    </div>
+    <div class="status-error status-error--200" [fxFlex]="'auto'">
+      <button mat-stroked-button (click)="go(200)" [matTooltip]="'sucesso'"> 200</button>
+      <button mat-stroked-button (click)="go(201)" [matTooltip]="'criado'"> 201</button>
+      <button mat-stroked-button (click)="go(202)" [matTooltip]="'aceito'"> 202</button>
+      <button mat-stroked-button (click)="go(203)" [matTooltip]="'informações não autoritativas'"> 203</button>
+      <button mat-stroked-button (click)="go(204)" [matTooltip]="'sem conteúdo'"> 204</button>
+      <button mat-stroked-button (click)="go(205)" [matTooltip]="'redefinir o conteúdo'"> 205</button>
+      <button mat-stroked-button (click)="go(206)" [matTooltip]="'conteúdo parcial'"> 206</button>
+      <button mat-stroked-button (click)="go(207)" [matTooltip]="'status multiplo'"> 207</button>
+      <button mat-stroked-button (click)="go(208)" [matTooltip]="'já relatado'"> 208</button>
+      <button mat-stroked-button (click)="go(226)" [matTooltip]="'estou acostumado'"> 226</button>
+    </div>
+    <div class="status-error status-error--300" [fxFlex]="'auto'">
+      <button mat-stroked-button (click)="go(300)" [matTooltip]="'escolhas múltiplas'"> 300</button>
+      <button mat-stroked-button (click)="go(301)" [matTooltip]="'movido permanentemente'"> 301</button>
+      <button mat-stroked-button (click)="go(302)" [matTooltip]="'encontrado'"> 302</button>
+      <button mat-stroked-button (click)="go(303)" [matTooltip]="'veja outro'"> 303</button>
+      <button mat-stroked-button (click)="go(304)" [matTooltip]="'não modificado'"> 304</button>
+      <button mat-stroked-button (click)="go(305)" [matTooltip]="'usar proxy'"> 305</button>
+      <button mat-stroked-button (click)="go(306)" [matTooltip]="'alternar proxy'"> 306</button>
+      <button mat-stroked-button (click)="go(307)" [matTooltip]="'redirecionamento temporário'"> 307</button>
+      <button mat-stroked-button (click)="go(308)" [matTooltip]="'redirecionamento permanente'"> 308</button>
+    </div>
+    <div class="status-error status-error--400" [fxFlex]="100">
+      <button mat-stroked-button (click)="go(400)" [matTooltip]="'pedido ruim'"> 400</button>
+      <button mat-stroked-button (click)="go(401)" [matTooltip]="'não autorizado'"> 401</button>
+      <button mat-stroked-button (click)="go(402)" [matTooltip]="'pagamento requerido'"> 402</button>
+      <button mat-stroked-button (click)="go(403)" [matTooltip]="'proibido'"> 403</button>
+      <button mat-stroked-button (click)="go(404)" [matTooltip]="'não encontrado'"> 404</button>
+      <button mat-stroked-button (click)="go(405)" [matTooltip]="'método não permitido'"> 405</button>
+      <button mat-stroked-button (click)="go(406)" [matTooltip]="'não aceitável'"> 406</button>
+      <button mat-stroked-button (click)="go(407)" [matTooltip]="'autenticação de proxy necessária'"> 407</button>
+      <button mat-stroked-button (click)="go(408)" [matTooltip]="'tempo limite de solicitação'"> 408</button>
+      <button mat-stroked-button (click)="go(409)" [matTooltip]="'conflito'"> 409</button>
+      <button mat-stroked-button (click)="go(410)" [matTooltip]="'se foi'"> 410</button>
+      <button mat-stroked-button (click)="go(411)" [matTooltip]="'comprimento necessário'"> 411</button>
+      <button mat-stroked-button (click)="go(412)" [matTooltip]="'condição prévia falhou'"> 412</button>
+      <button mat-stroked-button (click)="go(413)" [matTooltip]="'carga útil muito grande'"> 413</button>
+      <button mat-stroked-button (click)="go(414)" [matTooltip]="'uri por muito tempo'"> 414</button>
+      <button mat-stroked-button (click)="go(415)" [matTooltip]="'tipo de mídia não suportado'"> 415</button>
+      <button mat-stroked-button (click)="go(416)" [matTooltip]="'intervalo não satisfatório'"> 416</button>
+      <button mat-stroked-button (click)="go(417)" [matTooltip]="'expectativa falhou'"> 417</button>
+      <button mat-stroked-button (click)="go(418)" [matTooltip]="'eu sou um bule de chá'"> 418</button>
+      <button mat-stroked-button (click)="go(421)" [matTooltip]="'pedido mal direcionado'"> 421</button>
+      <button mat-stroked-button (click)="go(422)" [matTooltip]="'entidade não processável'"> 422</button>
+      <button mat-stroked-button (click)="go(423)" [matTooltip]="'bloqueado'"> 423</button>
+      <button mat-stroked-button (click)="go(424)" [matTooltip]="'falha de dependência'"> 424</button>
+      <button mat-stroked-button (click)="go(426)" [matTooltip]="'atualização necessária'"> 426</button>
+      <button mat-stroked-button (click)="go(428)" [matTooltip]="'condição prévia necessária'"> 428</button>
+      <button mat-stroked-button (click)="go(429)" [matTooltip]="'muitos pedidos'"> 429</button>
+      <button mat-stroked-button (click)="go(431)" [matTooltip]="'pedido de campos de cabeçalho muito grande'"> 431</button>
+      <button mat-stroked-button (click)="go(451)" [matTooltip]="'indisponível por motivos legais'"> 451</button>
+    </div>
+    <div class="status-error status-error--500" [fxFlex]="100">
+      <button mat-stroked-button (click)="go(500)" [matTooltip]="'erro do servidor interno'"> 500</button>
+      <button mat-stroked-button (click)="go(501)" [matTooltip]="'não implementado'"> 501</button>
+      <button mat-stroked-button (click)="go(502)" [matTooltip]="'gateway ruim'"> 502</button>
+      <button mat-stroked-button (click)="go(503)" [matTooltip]="'serviço indisponível'"> 503</button>
+      <button mat-stroked-button (click)="go(504)" [matTooltip]="'tempo limite do gateway'"> 504</button>
+      <button mat-stroked-button (click)="go(505)" [matTooltip]="'versão http não suportada'"> 505</button>
+      <button mat-stroked-button (click)="go(506)" [matTooltip]="'variante também negocia'"> 506</button>
+      <button mat-stroked-button (click)="go(507)" [matTooltip]="'armazenamento insuficiente'"> 507</button>
+      <button mat-stroked-button (click)="go(508)" [matTooltip]="'loop detectado'"> 508</button>
+      <button mat-stroked-button (click)="go(510)" [matTooltip]="'não estendido'"> 510</button>
+      <button mat-stroked-button (click)="go(511)" [matTooltip]="'autenticação de rede necessária'"> 511</button>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+  <!--    <button mat-button (click)="getAll()" color="primary">GET ALL</button>-->
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,48 @@
+@import 'mixins';
+@import 'variables';
+@import 'theme-variables';
+@import 'modules/karma-browser';
+@import 'modules/animations';
+@import 'modules/mat-toolbar';
+@import 'modules/material-overrides';
+@import 'modules/dateRangePicker-overrides';
+@import 'modules/mat-horizontal-stepper';
+@import 'modules/form';
+@import 'modules/table';
+@import 'modules/list';
+@import 'modules/mat-sidenav-container';
+@import 'modules/mat-nav-list';
+@import 'modules/mat-snack-bar';
+@import 'modules/mat-fab';
+@import 'modules/mat-card';
+@import 'modules/dialog';
+@import 'modules/logo';
+
+// init Plugins
+// --------------------------------------------------
+//@import '../../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber';
+//@import "../../../node_modules/@angular/material/prebuilt-themes/indigo-pink";
+//@import '../../../node_modules/@angular/material/prebuilt-themes/pink-bluegrey';
+//@import '../../../node_modules/@angular/material/prebuilt-themes/purple-green';
+// end Plugins---------------------------------------
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.mat-accordion.child-card{ // component filho
+  .mat-tab-body-content {
+    overflow: hidden !important;
+    //background-color: red;
+  }
+
+  mat-expansion-panel {
+    &.mat-expansion-panel-spacing{
+      //margin: 20px -23px 20px -25px;
+      //border-radius: 0px;
+      background-color: #d5dce2;
+      box-shadow: none;
+    }
+  }
+}

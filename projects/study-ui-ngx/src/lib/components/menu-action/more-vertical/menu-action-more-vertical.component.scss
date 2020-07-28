@@ -1,0 +1,13 @@
+.pane-action-header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  position: absolute !important;
+  max-width: 100% !important;
+
+  .mat-dialog-container {
+    padding: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+}

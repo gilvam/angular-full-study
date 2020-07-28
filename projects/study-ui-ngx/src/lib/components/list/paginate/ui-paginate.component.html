@@ -1,0 +1,53 @@
+<div class="infinite-scroll-container"
+     [ngClass]="{
+     'infinite-scroll-container--table': typeList === 'table',
+     'infinite-scroll-container--default': typeList === 'default',
+     'infinite-scroll-container--card': typeList === 'card'
+     }">
+  <div infiniteScroll
+       [infiniteScrollDistance]="2"
+       [infiniteScrollThrottle]="50"
+       (scrolled)="scrolledActivate()"
+       [scrollWindow]="false"
+       *ngIf="page.totalElements > 0"
+  >
+    <mat-list class="mat-list--header" fxLayout="row wrap" fxLayoutGap="10px grid" [ngStyle]="uiListStyle" fxHide
+              [fxShow.gt-xs]="true" *ngIf="typeList === 'table'">
+      <mat-list-item *ngFor="let item of headerList"
+                     [fxFlex]="item.flex.default"
+                     [fxFlex.xs]="item.flex.xs"
+                     [fxFlex.sm]="item.flex.sm"
+                     [fxFlex.md]="item.flex.md"
+                     [fxFlex.lg]="item.flex.lg"
+                     [fxFlex.xl]="item.flex.xl">
+        {{ item.text }}
+      </mat-list-item>
+    </mat-list>
+
+    <div #content class="inner-content" [ngClass]=" { 'multiple-check': instanceofMenuActionCheck() }">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="list-end">
+      <div class="list-end--loading" *ngIf="page?.isLoading && !page?.last">
+        <ui-inner-loading></ui-inner-loading>
+      </div>
+      <div class="list-end--load-more" *ngIf="page && !page?.isLoading && !page?.last">
+        <button mat-stroked-button (click)="scrolledActivate()">Carregar Mais</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="paginate-info" *ngIf="page.totalElements > 0">
+    <strong>{{ page.totalCurrentElements }}</strong> de
+    <strong>{{ page.totalElements }}</strong> {{ paginationDescription }}
+  </div>
+
+  <ng-container *ngIf="page.totalElements === 0 && page.last">
+    <div fxLayout="row wrap" fxLayoutAlign="center center" class="paginate-empty">
+      <ui-list-message [type]="" [title]="emptyMsgTitle" [msg]="emptyMsgDescription"></ui-list-message>
+    </div>
+  </ng-container>
+</div>
+
+

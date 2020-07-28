@@ -1,0 +1,80 @@
+<ui-animation-loading></ui-animation-loading>
+
+<mat-sidenav-container autosize [ngClass]="{ 'is-not-logged-in': !(isLoggedIn$ | async) }">
+
+  <!-- sidenav START | init -->
+  <mat-sidenav #matSidenav [mode]="coreNavParams.nav.over" [opened]="coreNavParams.nav.start.opened">
+
+    <!-- logo -->
+    <mat-toolbar color="primary" [routerLink]="['/back/users']">
+      <div class="environment-type {{'environment-type--'+environment?.env}}">
+        {{ environment?.env }}
+      </div>
+      <img class="logo--logo-toolbar" src="assets/images/svg/angular-logo.svg" [routerLink]="['/back/users']">
+    </mat-toolbar>
+
+    <app-sidenav-start></app-sidenav-start>
+
+    <!-- user inf -->
+    <mat-toolbar class="mat-user-info">
+
+      <div>
+        <h4 mat-line>{{ authService.currentUser?.name }}</h4>
+        <p mat-line> {{ authService.currentUser?.profile }} | {{ authService.currentUser?.email }} </p>
+      </div>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="matSidenav.toggle()">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button [routerLink]="['/login']">
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+    </mat-toolbar>
+
+  </mat-sidenav>
+  <!-- sidenav START | end -->
+
+  <!--  sidenav END | init -->
+  <mat-sidenav #matSidenavEnd [mode]="coreNavParams.nav.over" [opened]="coreNavParams.nav.end.opened" position="end">
+    <!-- sidenav info VP -->
+    <mat-toolbar color="primary">
+    </mat-toolbar>
+    <app-sidenav-end [matSidenav]="matSidenavEnd"></app-sidenav-end>
+  </mat-sidenav>
+  <!--  sidenav END | end -->
+
+  <!-- content | init -->
+  <mat-sidenav-content autosize>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="matSidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <div class="breadcrumb" *ngFor="let breadcrumb of titleService.breadcrumbs; let last = last;">
+        <!-- mostra ultimo resultado da árvore routing se dispositivo mobile -->
+        <ng-container *ngIf="coreNavParams.nav.over === 'side' || last">
+          <span [routerLink]="[breadcrumb.url]">{{ breadcrumb.name }}</span>
+          <mat-icon *ngIf="!last">keyboard_arrow_right</mat-icon>
+        </ng-container>
+      </div>
+
+      <span class="fill-remaining-space"></span>
+      <span class="align-center"></span>
+      <span class="spacer"></span>
+
+      <app-menu-action></app-menu-action>
+
+    </mat-toolbar>
+
+    <div id="router-outlet-container">
+      <router-outlet (activate)="componentAdded($event)" (deactivate)="componentRemoved($event)"></router-outlet>
+    </div>
+
+    <!--  sidenav BOTTOM | init -->
+    <app-menu-bottom></app-menu-bottom>
+    <!--  sidenav BOTTOM | end -->
+
+  </mat-sidenav-content>
+  <!-- content | end -->
+
+</mat-sidenav-container>

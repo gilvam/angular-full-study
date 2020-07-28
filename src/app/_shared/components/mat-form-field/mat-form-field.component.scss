@@ -1,0 +1,22 @@
+mat-form-field {
+  width: 100%;
+
+  > div.mat-form-field-wrapper {
+    margin: 6px 0px 0px 0px !important;
+
+    > div.mat-form-field-flex {
+      > div.mat-form-field-infix {
+        display: flex;
+
+        mat-icon {
+          font-size: 150%;
+          height: 0px;
+          margin-top: -4px;
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+

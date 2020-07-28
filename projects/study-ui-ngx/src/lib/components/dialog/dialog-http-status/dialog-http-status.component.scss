@@ -1,0 +1,42 @@
+$font-default-size: 50px;
+
+div.mat-dialog-title {
+  display: flex;
+  line-height: $font-default-size;
+  font-size: 24px !important;
+  color: #ff3547;
+
+  h1, h2 {
+    margin: 0px;
+  }
+
+  h1 {
+    font-size: 23px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+    margin-left: 10px;
+  }
+
+  mat-icon {
+    height: auto;
+    width: auto;
+    margin-right: 15px;
+    font-size: $font-default-size;
+  }
+}
+
+div.mat-dialog-content {
+  color: #495057;
+
+  ul {
+    > li {
+      padding: 5px 0px;
+    }
+  }
+}
+
+div.mat-dialog-actions {
+  color: #ff3547;
+}

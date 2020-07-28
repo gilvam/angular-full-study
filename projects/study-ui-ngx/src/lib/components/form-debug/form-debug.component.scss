@@ -1,0 +1,35 @@
+.form-debug-component {
+  position: relative;
+  font-size: 10px;
+  margin: 0px;
+  padding: 6px 8px;
+  background-color: rgba(255, 187, 51, 0.23);
+  border: 1px solid rgba(133, 100, 4, 0.16);
+
+  &.form-is-valid{
+    background-color: #43ad534a;
+    border: 1px solid #43ad53;
+  }
+
+  > div {
+    position: absolute;
+    right: 6px;
+
+    span{
+      color: darkred;
+      font-weight: 100;
+      font-size: 13px;
+      margin-left: 4px;
+
+      &.is-valid{
+        color: green;
+        font-weight: bold;
+      }
+    }
+  }
+
+  > pre {
+    margin: 0px;
+    padding: 0px;
+  }
+}

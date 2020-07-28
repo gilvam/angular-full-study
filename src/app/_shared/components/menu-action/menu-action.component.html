@@ -1,0 +1,21 @@
+<ng-container *mobxAutorun>
+  <template #filter></template>
+
+  <button mat-icon-button (click)="search()" *ngIf="menuActionStore.component">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <ui-menu-action-more-vertical
+          [menuMoreOptions]="menuActionStore.menuMoreOptionList"
+          (changeMatMenuClick)="menuMoreOptionListClick($event)"
+          (changeDialogActionCheck)="menuMoreOptionListCheck($event)"
+          (changeDialogActionClosed)="menuMoreOptionListClosed($event)"
+          [subActions]="subActions"
+          [showDialog]="isDialog"
+  >
+  </ui-menu-action-more-vertical>
+
+  <ui-net-connection></ui-net-connection>
+
+</ng-container>
+

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/study-core-ngx",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "@auth0/angular-jwt": "@auth0/angular-jwt",
+      "ngforage": "ngforage"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "angular",
+    "@auth0/angular-jwt"
+  ]
+}

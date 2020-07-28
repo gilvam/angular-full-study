@@ -1,0 +1,30 @@
+<div id="app-login" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card>
+    <mat-card-header>
+      <img src="assets/images/svg/angular-logo.svg" class="d-inline-block align-top" alt="">
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="formGroup">
+
+        <app-mat-form-field>
+          <input matInput type="text" placeholder="Email" formControlName="email">
+        </app-mat-form-field>
+
+        <app-mat-form-field>
+          <input matInput type="password" placeholder="Senha" formControlName="password">
+        </app-mat-form-field>
+
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary">
+        <mat-icon> exit_to_app</mat-icon>
+        Login
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

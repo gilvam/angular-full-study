@@ -1,0 +1,26 @@
+.table-container {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+}
+
+table {
+  &.mat-table {
+
+  }
+}
+
+
+.center {
+  text-align: center;
+}
+.table-container {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+
+  >.mat-table{
+    width: 100%;
+  }
+}
+

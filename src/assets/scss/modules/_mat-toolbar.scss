@@ -1,0 +1,17 @@
+mat-toolbar {
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  &.mat-toolbar {
+    min-height: 0px;
+    transition: min-height 1.5s;
+
+    > mat-toolbar-row {
+      > span[ng-reflect-router-link] {
+        margin-left: 10px;
+        transition: margin 0.5s;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<ng-container *mobxAutorun>
+
+  <mat-toolbar color="primary" *ngIf="menuBottomStore.isHtmlVisible">
+
+    <button mat-button (click)="goToPreviousCheckoutStep()" *ngIf="bottomNavModel.leftButton">
+      <mat-icon>{{ bottomNavModel.leftButton.icon }}</mat-icon>
+      {{ bottomNavModel.leftButton.text }}
+    </button>
+
+    <span class="fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="spacer"></span>
+
+    <button mat-button [disabled]="disabled" (click)="goToNextCheckoutStep()" *ngIf="bottomNavModel.rightButton">
+      <mat-icon *ngIf="bottomNavModel.rightButton.iconOnLeft">{{ bottomNavModel.rightButton.icon }}</mat-icon>
+      {{ bottomNavModel.rightButton.text }}
+      <mat-icon *ngIf="!bottomNavModel.rightButton.iconOnLeft">{{ bottomNavModel.rightButton.icon }}</mat-icon>
+    </button>
+
+  </mat-toolbar>
+
+</ng-container>

@@ -1,0 +1,57 @@
+<div class="container">
+  <div fxFlex fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+      <div class="item-fx" *ngFor="let card of cardList; let i = index" [ngStyle]="card.style"
+           [fxFlex]="100" [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="33.3" [fxFlex.lg]="20" [fxFlex.xl]="10">
+        {{ i + 1}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div fxLayout="row wrap" fxLayoutGap="20px grid" fxLayoutAlign="center center">
+    <div class="item-fx" *ngFor="let card of cardList; let i = index"
+         [fxFlex]="100" [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="33.3" [fxFlex.lg]="20" [fxFlex.xl]="10">
+      <div class="item-fx--name" [ngStyle]="card.style">{{ i + 1}}</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div fxLayout="row" fxLayoutGap="20px grid" fxLayoutAlign="space-around center" >
+    <div class="item-fx" *ngFor="let card of cardList; let i = index"
+         [fxFlex]="100" [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="33.3" [fxFlex.lg]="20" [fxFlex.xl]="10">
+      <div class="item-fx--name" [ngStyle]="card.style">{{ i + 1}}</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div fxLayout="row wrap" fxLayoutGap="10px grid">
+      <div *ngFor="let card of cardList; let i = index"
+           [fxFlex]="100" [fxFlex.xs]="100" [fxFlex.sm]="50" [fxFlex.md]="33.3" [fxFlex.lg]="20" [fxFlex.xl]="10">
+        <div [ngStyle]="card.style">{{ i + 1}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div fxLayout="row wrap" fxLayoutGap="50px grid">
+    <div *ngFor="let card of cardList"
+         [fxFlex]="25" [fxFlex.md]="33" [fxFlex.sm]="50" [fxFlex.xs]="100"
+         fxLayout="column"
+         style="padding: 5px;"
+    >
+      <mat-card class="mat-elevation-z1">
+        <mat-card-title> {{ card.title }} </mat-card-title>
+        <mat-card-content> {{ card.description }} </mat-card-content>
+        <mat-card-actions align="end">
+          <button fxFlex mat-button color="primary"> BUTTON CENTER</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

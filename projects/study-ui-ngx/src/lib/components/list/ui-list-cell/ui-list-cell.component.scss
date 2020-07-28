@@ -1,0 +1,48 @@
+ui-list-cell {
+  display: flex;
+  align-items: center; /* align vertical */
+  font-size: 14px;
+  color: #3e3e3e;
+  min-height: 40px;
+
+  > div {
+
+    h5,
+    span {
+      display: block;
+      display: block;
+    }
+
+    h5 {
+      margin: 0px 0px 1px 0px;
+      font-weight: 100;
+      font-size: 12px;
+      color: #6b6b6b;
+
+      &.type-list-table {
+        //color: red;
+        display: none;
+        padding-right: 10px;
+
+        &::after {
+          content: ":";
+        }
+
+        @media (min-width: 0px) and (max-width: 599px) { // xs
+          display: block;
+        }
+      }
+
+      &.type-list-default {
+        //color: blue;
+      }
+    }
+
+    span {
+      &.cell-empty {
+        margin-left: 10px;
+      }
+    }
+  }
+
+}

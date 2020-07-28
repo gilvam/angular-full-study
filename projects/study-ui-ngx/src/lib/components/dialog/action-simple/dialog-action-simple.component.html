@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+
+    <span class="fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="spacer"></span>
+
+    <button mat-button [mat-dialog-close]="item" [color]="item?.color" *ngFor="let item of subActions">
+      <mat-icon *ngIf="item?.icon">{{ item?.icon }}</mat-icon>
+      {{ item?.name }}
+    </button>
+
+  </mat-toolbar-row>
+</mat-toolbar>

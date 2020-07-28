@@ -1,0 +1,34 @@
+<h3>Dynamic Grid: <span style="color: indianred">{{grid.cols}}</span></h3>
+
+<mat-grid-list #grid  [gutterSize]="'10px'" [cols]="8">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+  <mat-grid-tile>5</mat-grid-tile>
+  <mat-grid-tile>6</mat-grid-tile>
+  <mat-grid-tile>7</mat-grid-tile>
+  <mat-grid-tile>8</mat-grid-tile>
+</mat-grid-list>
+
+
+<br>
+
+
+<h3>Default grid</h3>
+<mat-grid-list
+        [gdColumn.gt-md]="12"
+        [gdColumn.sm]="3"
+        [gdColumn.md]="8"
+        [gdRow.gt-md]="'1:1'"
+        [rowHeight]="'4:3'"
+        [gutterSize]="'10px'"
+        [cols]="10"
+>
+  <mat-grid-tile *ngFor="let tile of colorTiles; let i = index;"
+                 [rowspan]="tile.rowspan"
+                 [colspan]="tile.colspan"
+                 [ngStyle]="{'background': tile.color}">
+    {{ i }}
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,21 @@
+<div mat-dialog-title>
+  <mat-icon>warning</mat-icon>
+  <h1 *ngIf="data?.status">{{ data?.status }}</h1>
+  <h2>{{ data?.error }}</h2>
+</div>
+
+<div mat-dialog-content>
+
+  <p>{{ data?.message }}</p>
+
+  <ul *ngIf="data.errors">
+    <li *ngFor="let e of data.errors">
+      {{ e.fieldName }} : {{ e.message }}
+    </li>
+  </ul>
+
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button class="btn-dialog-action" [mat-dialog-close]="true">OK</button>
+</div>
+

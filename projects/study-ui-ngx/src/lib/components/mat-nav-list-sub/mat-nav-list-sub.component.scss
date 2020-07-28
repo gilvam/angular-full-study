@@ -1,0 +1,39 @@
+ui-mat-nav-list-sub {
+
+  .submenu {
+    &--mat-list-item {
+    }
+    &--mat-list-sub {
+      background-color: darken(whitesmoke, 5%);
+      padding-left: 20px;
+    }
+  }
+
+  @media (min-width: 960px) and (max-width: 5000px) { // xl a md
+    .submenu {
+      &--mat-list-item {
+      }
+
+      &--mat-list-sub {
+        position: fixed;
+        display: block;
+        padding: 0px;
+        overflow-y: auto;
+
+        > .mat-nav-list {
+        }
+      }
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 959px) { // sm a xs
+    .submenu {
+      &--mat-list-item {
+      }
+
+      &--mat-list-sub {
+      }
+    }
+  }
+
+}

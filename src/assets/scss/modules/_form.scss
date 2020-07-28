@@ -1,0 +1,206 @@
+.form-group {
+  label {
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .alert-danger {
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: $red;
+    font-size: .71rem;
+  }
+}
+
+.form-control {
+  padding-left: .6rem;
+
+  &[readonly] {
+    background-color: $white;
+    cursor: pointer;
+  }
+}
+
+form {
+  margin-bottom: 0px !important;
+
+  mat-form-field {
+    //min-height: 75px;
+    //margin: 1px 0px;
+
+    /** appearance: standard *******************/
+    &.mat-form-field-appearance-standard {
+      div.mat-form-field-infix {
+        display: flex !important;
+
+        > mat-icon.mat-icon {
+          font-size: 21px;
+          margin: -1px 0px -5px 0px;
+        }
+
+        > mat-datepicker-toggle.mat-datepicker-toggle {
+          > button.mat-icon-button {
+            width: auto;
+            height: auto;
+            line-height: inherit;
+            margin: -6px 0px;
+            padding: 4px 4px;
+
+            > span.mat-button-wrapper {
+              > svg {
+                height: 14px;
+                width: 14px;
+              }
+            }
+          }
+        }
+
+        > mat-hint {
+          font-size: 11px;
+          text-align: right;
+          position: absolute;
+          right: 0px;
+          bottom: -16px;
+        }
+      }
+
+      > div.mat-form-field-subscript-wrapper {
+        margin-top: 3px;
+      }
+    }
+
+
+    /** appearance: outline *******************/
+    &.mat-form-field-appearance-outline {
+      line-height: initial;
+
+      &.mat-form-field-should-float {
+        > span.mat-form-field-label-wrapper {
+          top: -13px;
+        }
+      }
+
+      div.mat-form-field-infix {
+        padding: 8px 0 15px 0;
+
+        //> *:not(span) {
+        //  background-color: #f5c6cb;
+        //  padding-bottom: 2px;
+        //}
+
+        > mat-hint {
+          position: absolute;
+          bottom: -14px;
+          font-size: 75%;
+          left: -4px;
+
+          &[ng-reflect-align="end"] {
+            left: auto;
+            right: -6px;
+          }
+        }
+
+        > span.mat-form-field-label-wrapper {
+          top: -15px;
+          padding: 0px;
+        }
+
+        textarea {
+          min-height: 15px;
+        }
+
+        mat-datepicker-toggle {
+          margin: -13px -8px -12px 0px;
+        }
+      }
+
+      .mat-select-arrow-wrapper {
+        transform: none;
+      }
+
+      .mat-form-field-outline {
+        .mat-form-field-outline-end,
+        .mat-form-field-outline-gap,
+        .mat-form-field-outline-start {
+          border-width: 1px;
+        }
+      }
+
+      // container mat-error
+      .mat-form-field-subscript-wrapper {
+        padding: 2px 5px 0px 5px;
+        margin: 0px;
+      }
+    }
+
+    &.mat-form-field-invalid {
+      &.mat-form-field-should-float {
+        .mat-form-field-label {
+          color: darkred !important;
+        }
+      }
+
+      .mat-hint { // esconde mat-hint se existe um mat-error
+        display: none;
+      }
+    }
+
+    .mat-form-field-subscript-wrapper {
+      mat-error { // erros em uma linha ...
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+
+    mat-hint {
+      right: -4px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+
+    //mat-form-field
+    //ng-tns-c19-4
+    //mat-primary
+    //mat-form-field-type-mat-input
+    //mat-form-field-appearance-outline
+    //mat-form-field-can-float
+    //mat-form-field-has-label
+    //mat-form-field-hide-placeholder
+    //ng-untouched
+    //ng-pristine
+    //ng-invalid
+  }
+
+  section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+
+    > label {
+      margin: 0 10px;
+    }
+
+    > mat-radio-group {
+      > mat-radio-button {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  &[fxLayout] {
+    app-mat-form-field,
+    mat-form-field {
+      padding-bottom: 0px !important;
+    }
+
+    .pd-bottom-0 {
+      padding-bottom: 0px !important;
+    }
+  }
+}

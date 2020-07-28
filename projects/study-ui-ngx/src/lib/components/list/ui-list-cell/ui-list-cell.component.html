@@ -1,0 +1,19 @@
+<ng-container>
+
+  <div class="cont">
+    <h5 [ngClass]="{
+              'type-list-table': uiPaginateComponent?.typeList === 'table',
+             'type-list-default': uiPaginateComponent?.typeList === 'default'
+              }">
+      {{ title }}
+    </h5>
+
+    <span #content>
+      <ng-content></ng-content>
+    </span>
+
+    <!--  se ng-content vazio -->
+    <span class="cell-empty" *ngIf="!content?.textContent?.trim()">-</span>
+  </div>
+
+</ng-container>

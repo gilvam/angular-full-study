@@ -1,0 +1,61 @@
+<mat-nav-list>
+  <a mat-list-item [routerLink]="['back/debits']" routerLinkActive="mat-active">
+    <mat-icon mat-list-icon> attach_money</mat-icon>
+    <span matLine> Débitos </span>
+  </a>
+  <a mat-list-item [routerLink]="['back/transactions']" routerLinkActive="mat-active">
+    <mat-icon mat-list-icon> compare_arrows</mat-icon>
+    <span matLine> Transações </span>
+  </a>
+  <!--<a mat-list-item [routerLink]="['/']" routerLinkActive="mat-active"-->
+  <!--   style="background-color: transparent; color: #aaa; text-decoration: line-through;">-->
+  <!--  <mat-icon mat-list-icon> description</mat-icon>-->
+  <!--  <span matLine> Arquivos </span>-->
+  <!--</a>-->
+  <a mat-list-item [routerLink]="['back/groups']" routerLinkActive="mat-active">
+    <mat-icon mat-list-icon> group_work</mat-icon>
+    <span matLine> Grupos </span>
+  </a>
+  <!--<a mat-list-item [routerLink]="['/']" routerLinkActive="mat-active"-->
+  <!--   style="background-color: transparent; color: #aaa; text-decoration: line-through;">-->
+  <!--  <mat-icon mat-list-icon> group</mat-icon>-->
+  <!--  <span matLine> Und de negócios </span>-->
+  <!--</a>-->
+  <!--<a mat-list-item [routerLink]="['/']" routerLinkActive="mat-active"-->
+  <!--   style="background-color: transparent; color: #aaa; text-decoration: line-through;">-->
+  <!--  <mat-icon mat-list-icon> credit_card</mat-icon>-->
+  <!--  <span matLine> Planos </span>-->
+  <!--</a>-->
+  <a mat-list-item [routerLink]="['back/users']" routerLinkActive="mat-active">
+    <mat-icon mat-list-icon> person</mat-icon>
+    <span matLine> Usuários </span>
+  </a>
+  <!--<a mat-list-item [routerLink]="['/']" routerLinkActive="mat-active"-->
+  <!--   style="background-color: transparent; color: #aaa; text-decoration: line-through;">-->
+  <!--  <mat-icon mat-list-icon> block</mat-icon>-->
+  <!--  <span matLine> Blacklist </span>-->
+  <!--</a>-->
+
+  <a mat-list-item [routerLink]="['main/search']" routerLinkActive="mat-active">
+    <mat-icon mat-list-icon>search</mat-icon>
+    <span matLine>pesquisa - test</span>
+  </a>
+
+  <ui-mat-nav-list-sub
+          [menu]="[
+            { name: 'Docs', icon: 'library_books', isOpened: false,
+              links: [
+                { name: 'Dialog, SnackBar', icon: 'local_library', link: '/doc' },
+                { name: 'form',             icon: 'local_library', link: '/doc/formDoc' },
+                { name: 'form com child',   icon: 'local_library', link: '/doc/formChild' },
+                { name: 'layout row',       icon: 'local_library', link: '/doc/layoutRow' },
+                { name: 'dynamic grid',     icon: 'local_library', link: '/doc/dynamicGrid' },
+                { name: 'virtual scroll',   icon: 'local_library', link: '/doc/virtualScroll' },
+                { name: 'Flex layout',      icon: 'local_library', link: '/doc/flexLayout' },
+                { name: 'Post test REST',   icon: 'local_library', link: '/doc/postTest' }
+              ]
+            }
+          ]
+  "></ui-mat-nav-list-sub>
+
+</mat-nav-list>

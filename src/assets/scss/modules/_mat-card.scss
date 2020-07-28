@@ -1,0 +1,66 @@
+mat-card {
+  overflow: hidden;
+
+  > mat-card-header,
+    //> img,
+    //> mat-divider
+    //> mat-card-content,
+  > mat-card-actions {
+    //border: 1px dashed darkred;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  mat-divider {
+    position: unset !important;
+    margin: -14px 0px 16px 0px !important;
+    border-top-color: rgba(0, 0, 0, 0.03) !important;
+  }
+
+  > mat-card-header {
+    //margin-bottom: 32px;
+    //background-color: bisque;
+
+    img {
+      margin-right: 16px;
+    }
+
+    div.mat-card-header-text {
+      overflow: hidden;
+      margin: 0px;
+
+      mat-card-title,
+      mat-card-subtitle {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      mat-card-title {
+      }
+
+      mat-card-subtitle {
+      }
+    }
+  }
+
+  > mat-card-content {
+    display: flex;
+    flex-direction: column;
+    position: unset;
+    overflow: hidden;
+
+    form {
+      &:not(.form-auto) {
+        > * {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  > mat-card-actions {
+    margin-left: 0px !important;
+
+  }
+}

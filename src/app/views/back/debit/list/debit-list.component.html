@@ -1,0 +1,52 @@
+<ui-paginate (changeScroll)="loadPagination()"
+             (changeSelectedList)="getSelects($event)"
+             [page]="page"
+             [menuActionCheck]="menuActionCheck"
+             [paginationDescription]="'não débitos (teste)'"
+             [emptyMsgTitle]="'Lista vazia'"
+             [emptyMsgDescription]="':('"
+             typeList="card"
+>
+  <mat-selection-list #matSelectionList fxLayout="row wrap" fxLayoutGap="10px grid">
+    <mat-list-option *ngFor="let debit of debits; let i = index;" [value]="debit.id"
+                     [fxFlex]="25"
+                     [fxFlex.xl]="25"
+                     [fxFlex.lg]="33.3"
+                     [fxFlex.md]="50"
+                     [fxFlex.sm]="50"
+                     [fxFlex.xs]="100"
+    >
+
+      <mat-card>
+        <mat-card-header>
+          <img mat-card-avatar src="https://placeimg.com/{{i + 50}}/{{i + 50}}/any">
+          <mat-card-title>{{ debit.name }}</mat-card-title>
+          <mat-card-subtitle>#{{ debit.id }} | {{ debit.email }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <!--<img mat-card-image src="https://placeimg.com/300/50/any" alt="Photo of a Shiba Inu">-->
+
+        <mat-divider></mat-divider>
+
+        <mat-card-content [style.height]="'179px'">
+          <ui-list fxLayout="row wrap" fxLayoutGap="10px grid">
+            <ui-list-cell [fxFlex]="30" [fxFlex.xs]="100" [title]="'Id'"> {{ debit.id }} </ui-list-cell>
+            <ui-list-cell [fxFlex]="70" [fxFlex.xs]="100" [title]="'Email'"> {{ debit.email }} </ui-list-cell>
+            <ui-list-cell [fxFlex]="100" [fxFlex.xs]="100" [title]="'Mobile'"> {{ debit.mobile }} </ui-list-cell>
+            <ui-list-cell [fxFlex]="100" [fxFlex.xs]="100" [title]="'Mais informações'">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam aperiam architecto aspernatur
+              dignissimos eligendi, est harum in, laborum minima nemo obcaecati omnis provident quia repellat rerum
+              ullam veniam, vero?
+            </ui-list-cell>
+          </ui-list>
+        </mat-card-content>
+
+        <mat-card-actions [align]="'end'">
+          <button mat-button color="primary">LIKE</button>
+          <button mat-button color="primary">SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-list-option>
+  </mat-selection-list>
+</ui-paginate>

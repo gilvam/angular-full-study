@@ -1,0 +1,4 @@
+<div class="form-debug-component" [ngClass]="{'form-is-valid': form.valid}" *ngIf="form">
+  <div>Form válido: <span [ngClass]="{'is-valid': form.valid}">{{ form.valid }}</span></div>
+  <pre>Valores: <br>{{ form.value | json }}</pre>
+</div>

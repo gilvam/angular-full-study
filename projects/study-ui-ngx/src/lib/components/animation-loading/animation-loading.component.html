@@ -1,0 +1,22 @@
+<!--<ng-container *mobxAutorun>-->
+<!--<div class="container-animation-loading active" [ngClass]="{ 'active': animationLoadAction?.show }">-->
+<!--<ul class="animation-circle">-->
+<!--<li></li>-->
+<!--<li></li>-->
+<!--<li></li>-->
+<!--<li></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</ng-container>-->
+
+
+<ng-container>
+  <div class="container-animation-loading active" [ngClass]="{ 'active': animationLoadAction?.show }">
+    <mat-progress-spinner
+            [color]="color"
+            [mode]="mode"
+            [diameter]="diameter"
+            [strokeWidth]="strokeWidth">
+    </mat-progress-spinner>
+  </div>
+</ng-container>

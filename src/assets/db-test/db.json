@@ -1,0 +1,10 @@
+{
+  "users": [
+    { "id": 1, "name": "Dino da Silva Sauro", "email": "dino@mail.com", "password": "123" },
+    { "id": 2, "name": "Kamila Lapes de Nóbrega", "email": "kaka@mail.com", "password": "123" },
+    { "id": 3, "name": "Emanuel Simples da Silva", "email": "ema@mail.com", "password": "123" }
+  ],
+  "signin": [
+    { "id": 1, "name": "Dino da Silva Sauro", "email": "dino@mail.com", "password": "123" }
+  ]
+}

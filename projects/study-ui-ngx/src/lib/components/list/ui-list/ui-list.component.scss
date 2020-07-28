@@ -1,0 +1,9 @@
+ui-list {
+  width: 100%;
+}
+
+:host::ng-deep {
+  width: 100%;
+  align-items: center;
+  word-break: break-word; // css break words
+}
